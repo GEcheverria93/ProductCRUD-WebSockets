@@ -1,0 +1,35 @@
+{
+    "name": "productcrud-websockets",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint . --ext ts,tsx,js --report-unused-disable-directives --max-warnings 0",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier": "prettier --ignore-path .gitignore '**/*.{js,ts,jsx,tsx,vue,astro}'",
+        "format": "npm run prettier -- --write",
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.0",
+        "express-handlebars": "^8.0.1",
+        "socket.io": "^4.8.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.57.1",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-node": "^4.1.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "nodemon": "^3.1.7",
+        "prettier": "^3.3.3"
+    }
+}
