@@ -3,8 +3,19 @@
 </h1>
 
 <ul id='productList'>
+</ul>
 
-</div>
+<form id='addProductForm'>
+    <input type='text' id='title' placeholder='Nombre del producto' required />
+    <input
+        type='number'
+        id='price'
+        placeholder='Precio del producto'
+        required
+    />
+    <button type='submit'>Agregar producto</button>
+
+</form>
 
 <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 <script src='/socket.io/socket.io.js'></script>
