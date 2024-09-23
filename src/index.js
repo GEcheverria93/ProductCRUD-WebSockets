@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 const { Server } = require('socket.io');
 const app = require('./app');
+const { readProducts } = require('./services/productService');
 
 dotenv.config();
 
@@ -12,3 +13,9 @@ const httpServer = app.listen(PORT, () => {
 
 // eslint-disable-next-line no-unused-vars
 const io = new Server(httpServer);
+
+io.on('connection', (socket) => {
+    console.log('Nuevo cliente conectado');
+    const products = readProducts();
+    socket.emit('productListUpdated', products);
+});

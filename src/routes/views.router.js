@@ -1,13 +1,15 @@
 const express = require('express');
+const { readProducts } = require('../services/productService');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send('path para las vistas');
+    const products = readProducts();
+    res.render('home', { products, title: 'Home' });
 });
 
 router.get('/realtimeproducts', (req, res) => {
-    res.render('realTimeProducts');
+    res.render('realTimeProducts', { title: 'Real Time Products' });
 });
 
 module.exports = router;
